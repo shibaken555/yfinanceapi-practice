@@ -8,7 +8,7 @@ public class Practice1 {
         System.out.println("取得価格は" + acquisitionPrice + "円です");
         // 現在価格
         BigDecimal currentPrice = BigDecimal.valueOf(10000);
-        System.out.println("現在価格は" + acquisitionPrice + "円です");
+        System.out.println("現在価格は" + currentPrice + "円です");
         System.out.println("投資のリターンは"+calcPerformance(acquisitionPrice, currentPrice).toPlainString()+"%です");
     }
 

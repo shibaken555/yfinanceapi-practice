@@ -1,13 +1,14 @@
-console.log("処理開始");
-for (let i = 1; i <= 20; i++) {
-    if (i % 15 === 0) {
-        console.log(i + ":fizzbuzz");
-    }
-    if (i % 3 === 0) {
-        console.log(i + ":fizz");
-    }
-    if (i % 5 === 0) {
-        console.log(i + ":buzz");
-    }
+class Hero {
+    name = "";
+    realName = "";
+    height = 0;
+    weight = 0;
 }
+const spiderman = new Hero();
+console.log(spiderman);
+spiderman.name = "spiderman";
+spiderman.realName = "Peter Parker";
+spiderman.height = 177.8;
+spiderman.weight = 81;
+console.log(spiderman);
 export {};

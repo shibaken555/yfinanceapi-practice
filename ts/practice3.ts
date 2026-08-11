@@ -1,16 +1,27 @@
 export{}
+// コンストラクタ付きのクラスの練習
 
-const invesmentPrincipal:number = 10000;
-const invesmentReturn:number = 1.3;
-const percentageOfIr:number = (invesmentReturn-1)*100;
-console.log("投資の元本は"+invesmentPrincipal+"円です。");
-console.log("投資のリターンは"+percentageOfIr+"%です。");
+class Hero {
+   name: string;
+   realName: string;
+   height: number;
+   weight: number;
 
-function calculateTotalAmount(productPrice:number,taxRate:number):number{
-   let totalAmount:number = productPrice * taxRate;
-   return totalAmount;
+   constructor(name: string, realName: string, height: number, weight: number) {
+      this.name = name;
+      this.realName = realName;
+      this.height = height;
+      this.weight = weight;
+   }
+
+   // メソッド
+   calcBmi(hero: Hero) {
+      // 身長の単位をcm→mに変換
+      const heightInMeters: number = hero.height / 100;
+      const bmi: number = hero.weight / (heightInMeters ** 2);
+      return bmi;
+   };
 }
 
-console.log("商品価格は" + "1000円です");
-console.log("消費税率は" + "10%です");
-console.log(calculateTotalAmount(1000,1.1));
+const hulk:Hero = new Hero("Hulk","Bruce Banner",256.45,471);
+console.log(`${hulk.realName}は怒ると${hulk.name}になります`);

@@ -64,6 +64,7 @@ for (const key in mcuPhase1Movies) {
 console.log(`アイアンマンの公開年は${mcuPhase1Movies["Iron Man"]}年です`);
 console.log(mcuPhase1Movies.Thor);
 
+// オブジェクトリテラル
 const ironmanPersonalData =
 {
     name:"ironman",

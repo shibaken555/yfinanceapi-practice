@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,7 +25,8 @@ public class practice3 {
         System.out.println("valueList" + valueList);
 
         // 値の出現回数を数えるMapを作成
-        Map<String, Integer> countsMap = new HashMap<>();
+        // 順序を保証しないと後続のforループで要素追加できないので、LinkedHashMapを使用する
+        Map<String, Integer> countsMap = new LinkedHashMap<>();
         for (String word : valueList) {
             countsMap.put(word, countsMap.getOrDefault(word, 0) + 1);
         }
@@ -32,7 +34,16 @@ public class practice3 {
 
         // 出現回数が2回以上の値を削除する
         countsMap.entrySet().removeIf(entry -> entry.getValue() > 2);
-        System.out.println(countsMap);
+        System.out.println("countsMap(重複なし)"+countsMap);
+
+        List<String> distinctList = new ArrayList<>(countsMap.keySet());
+        System.out.println("distinctList" + distinctList);
+
+        Map<Integer, String> distinctMap = new HashMap<>();
+        for (int i = 0; i < distinctList.size(); i++) {
+            distinctMap.put(i + 1, distinctList.get(i));
+        }
+        System.out.println("distinctMap" + distinctMap);
 
     }
 }
